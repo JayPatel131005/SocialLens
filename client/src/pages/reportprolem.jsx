@@ -37,7 +37,20 @@ const ProblemReport = () => {
       <form onSubmit={handleSubmit}>
         <input type="text" name="title" placeholder="Title (Min 10 chars)" required onChange={handleChange} />
         <textarea name="description" placeholder="Description (Min 20 chars)" required onChange={handleChange}></textarea>
-        <input type="text" name="type" placeholder="Type (e.g., Road Issue, Electricity, etc.)" required onChange={handleChange} />
+       <select name="type" className = "issue-select" required onChange={handleChange}>
+  <option value="">Select an Issue Type</option>
+  <option value="Street Light Problem">Street Light Problem</option>
+  <option value="Road Issue">Road Issue</option>
+  <option value="Pothole Problem">Pothole Problem</option>
+  <option value="Theft/Crime Issue">Theft/Crime Issue</option>
+  <option value="Water Supply Issue">Water Supply Issue</option>
+  <option value="Garbage Collection">Garbage Collection</option>
+  <option value="Electricity Issue">Electricity Issue</option>
+  <option value="Traffic Violation">Traffic Violation</option>
+  <option value="Public Transport Issue">Public Transport Issue</option>
+  <option value="Other">Other</option>
+</select>
+
         <input type="text" name="location" placeholder="Location" required onChange={handleChange} />
         <input type="text" name="images" placeholder="Image URL (optional)" onChange={handleChange} />
         <button type="submit">Submit Report</button>

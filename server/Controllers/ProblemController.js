@@ -24,9 +24,7 @@ const newProblem = async (req, res) => {
 // Function to get all problems reported by a specific user
 const getReportedProblem = async (req, res) => {
   try {
-    const { id } = req.query;
-    const response = await Problems.find({ reportedBy: id });
-
+    const response = await Problems.find({});
     if (response.length > 0) {
       res.status(200).json(response); // Success, send the found problems
     } else {

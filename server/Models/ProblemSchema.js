@@ -4,11 +4,11 @@ const problemSchema = new mongoose.Schema({
     title:{
         type:String,
         required:true,
-        min:10,
+    
     },
     description:{
         type:String,
-        min:20,
+
     },
     type:{
         type:String,

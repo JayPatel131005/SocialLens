@@ -95,3 +95,45 @@ form button:active {
     margin-bottom: 10px;
     font-size: 16px;
 }
+/* Container for form elements */
+.issue-type-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Style for the select dropdown */
+  .issue-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4a90e2;
+    border-radius: 5px;
+    background: #f8f9fa;
+    cursor: pointer;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  .issue-select:hover {
+    border-color: #357abd;
+  }
+  
+  /* Style for custom input (when "Other" is selected) */
+  .custom-issue-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ff9800;
+    border-radius: 5px;
+    outline: none;
+    background: #fff8e1;
+    transition: border 0.3s ease;
+  }
+  
+  .custom-issue-input:focus {
+    border-color: #e65100;
+  }
+  
