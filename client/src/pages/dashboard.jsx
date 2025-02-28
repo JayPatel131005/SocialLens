@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [issues, setIssues] = useState([]);
   const [stats, setStats] = useState({
     totalIssues: 0,
@@ -11,16 +13,8 @@ const Dashboard = () => {
     fraudReports: 0,
   });
 
-  const [newIssue, setNewIssue] = useState({
-    type: "",
-    description: "",
-  });
-
-  const issueTypes = ["Pothole", "Garbage", "Traffic Violation", "Street Light", "Water Leakage"];
-
   useEffect(() => {
     const fetchData = async () => {
-      // Dummy Data
       const dummyData = [
         { name: "Pothole", count: 10 },
         { name: "Garbage", count: 5 },
@@ -41,30 +35,9 @@ const Dashboard = () => {
     fetchData();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!newIssue.type || !newIssue.description) return;
-
-    // Update issue statistics
-    const updatedIssues = [...issues];
-    const foundIndex = updatedIssues.findIndex((item) => item.name === newIssue.type);
-
-    if (foundIndex !== -1) {
-      updatedIssues[foundIndex].count += 1;
-    } else {
-      updatedIssues.push({ name: newIssue.type, count: 1 });
-    }
-
-    setIssues(updatedIssues);
-    setStats((prev) => ({ ...prev, totalIssues: prev.totalIssues + 1, pendingIssues: prev.pendingIssues + 1 }));
-
-    // Clear form
-    setNewIssue({ type: "", description: "" });
-  };
-
   return (
     <div className="dashboard">
-      <h2>Admin Dashboard</h2>
+      <h2> Dashboard</h2>
 
       {/* Stats Section */}
       <div className="stats-container">
@@ -86,27 +59,11 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Issue Reporting Form */}
-      <div className="issue-report-container">
-        <h3>Report an Issue</h3>
-        <form onSubmit={handleSubmit} className="issue-form">
-          <select value={newIssue.type} onChange={(e) => setNewIssue({ ...newIssue, type: e.target.value })} required>
-            <option value="">Select Issue Type</option>
-            {issueTypes.map((type, index) => (
-              <option key={index} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-          <textarea
-            placeholder="Describe the issue..."
-            value={newIssue.description}
-            onChange={(e) => setNewIssue({ ...newIssue, description: e.target.value })}
-            required
-          ></textarea>
-          <button type="submit">Submit Issue</button>
-        </form>
-      </div>
+      {/* Create Report Button */}
+      <div className="create-report-btn" onClick={() => navigate("/reportproblem")}>
+  Create a New Report
+</div>
+
 
       {/* Issue Chart */}
       <div className="chart-container">

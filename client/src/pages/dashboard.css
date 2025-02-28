@@ -1,83 +1,81 @@
+/* Dashboard Styles */
 .dashboard {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .stats-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .stat-card {
-    background: white;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex: 1;
-  }
-  
-  .stat-card h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .stat-card p {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 5px;
-    color: #4A90E2;
-  }
-  
-  /* Issue Reporting Section */
-  .issue-report-container {
-    background: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .issue-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .issue-form select,
-  .issue-form textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .issue-form button {
-    padding: 10px;
-    background: #4A90E2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .issue-form button:hover {
-    background: #357ABD;
-  }
-  
-  .chart-container {
-    background: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Stats Section */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 150px;
+}
+
+.stat-card h3 {
+  color: #4a90e2;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.stat-card p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Create Report Button */
+.create-report-btn {
+  background: linear-gradient(135deg, #4a90e2, #3578e5);
+  color: white;
+  padding: 18px;
+  font-size: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.create-report-btn:hover {
+  background: linear-gradient(135deg, #3578e5, #2c65cc);
+  transform: scale(1.05);
+}
+
+.create-report-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Chart Section */
+.chart-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
